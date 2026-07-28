@@ -1,0 +1,409 @@
+:root {
+  --creme: #FFEAD9;
+  --papel: #FFFDF9;
+  --ameixa: #8B3A0E;
+  --vinho: #A8451A;
+  --dourado: #C79A3D;
+  --texto: #4A2E1D;
+  --texto-suave: #9C7C63;
+  --sombra: 0 10px 28px rgba(139, 58, 14, 0.14);
+  --raio: 16px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--creme);
+  color: var(--texto);
+  font-family: 'Work Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2 { font-family: 'Fraunces', serif; margin: 0; }
+
+/* ---------- Topo ---------- */
+.topo {
+  padding: 26px 20px 16px;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid rgba(139,58,14,0.1);
+}
+
+.marca { display: flex; align-items: center; gap: 14px; max-width: 640px; }
+
+.selo {
+  flex-shrink: 0;
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--papel);
+  box-shadow: var(--sombra);
+  border: 2px solid var(--papel);
+}
+
+.marca-texto h1 { font-size: 1.5rem; font-weight: 600; color: var(--ameixa); }
+.marca-texto p { margin: 2px 0 0; font-size: 0.85rem; color: var(--texto-suave); }
+
+/* ---------- Sumário ---------- */
+.conteudo { max-width: 680px; margin: 0 auto; padding: 20px 16px 90px; }
+
+.sumario {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+  margin-bottom: 10px;
+  scrollbar-width: none;
+}
+.sumario::-webkit-scrollbar { display: none; }
+
+.sumario-item {
+  flex-shrink: 0;
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(139,58,14,0.18);
+  background: #fff;
+  color: var(--texto);
+  font-size: 0.78rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.sumario-item.ativo, .sumario-item:hover {
+  background: var(--vinho);
+  border-color: var(--vinho);
+  color: #fff;
+}
+
+/* ---------- O livro ---------- */
+.livro {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+  perspective: 1800px;
+}
+
+.virar-pagina {
+  flex-shrink: 0;
+  align-self: center;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(139,58,14,0.2);
+  background: #fff;
+  color: var(--ameixa);
+  font-size: 1.3rem;
+  cursor: pointer;
+  box-shadow: var(--sombra);
+  transition: transform 0.15s, background 0.2s;
+}
+.virar-pagina:hover { background: #FFDCC0; }
+.virar-pagina:active { transform: scale(0.92); }
+.virar-pagina:disabled { opacity: 0.3; cursor: default; }
+
+.pagina-livro {
+  flex: 1;
+  min-height: 420px;
+  background: var(--papel);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  padding: 22px 20px;
+  transform-origin: center;
+  transition: transform 0.32s ease, opacity 0.32s ease;
+}
+.pagina-livro.saindo-prox { transform: rotateY(-18deg) scale(0.96); opacity: 0; }
+.pagina-livro.saindo-ant  { transform: rotateY(18deg) scale(0.96); opacity: 0; }
+
+.pagina-titulo {
+  font-family: 'Fraunces', serif;
+  font-size: 1.25rem;
+  color: var(--ameixa);
+  text-align: center;
+  margin-bottom: 4px;
+}
+.pagina-subtitulo {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--texto-suave);
+  margin-bottom: 18px;
+}
+
+.indicador-pagina {
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--texto-suave);
+  margin-top: 10px;
+}
+
+/* Capa do livro */
+.pagina-capa {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  gap: 10px;
+}
+.pagina-capa .capa-emoji { font-size: 2.6rem; }
+.pagina-capa h2 { color: var(--ameixa); font-size: 1.6rem; }
+.pagina-capa p { color: var(--texto-suave); font-size: 0.9rem; max-width: 320px; }
+
+/* ---------- Lista de itens (estilo cardápio de papel) ---------- */
+.lista-itens { display: flex; flex-direction: column; gap: 10px; }
+
+.linha-produto {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid rgba(139,58,14,0.08);
+}
+
+.miniatura {
+  flex-shrink: 0;
+  width: 54px; height: 54px;
+  border-radius: 10px;
+  background: #FFDCC0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  overflow: hidden;
+}
+.miniatura img { width: 100%; height: 100%; object-fit: cover; }
+
+.produto-info { flex: 1; min-width: 0; }
+.produto-info h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0 0 2px;
+  color: var(--ameixa);
+}
+.produto-info p {
+  margin: 0;
+  font-size: 0.76rem;
+  color: var(--texto-suave);
+}
+
+.produto-acao {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.produto-preco {
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--vinho);
+  white-space: nowrap;
+}
+
+.botao-adicionar {
+  border: none;
+  background: var(--ameixa);
+  color: #fff;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+.botao-adicionar:hover { background: var(--vinho); }
+.botao-adicionar:active { transform: scale(0.94); }
+
+/* ---------- Botão flutuante do carrinho ---------- */
+.botao-carrinho {
+  position: fixed;
+  bottom: 22px; right: 22px;
+  width: 58px; height: 58px;
+  border-radius: 50%;
+  border: none;
+  background: var(--vinho);
+  color: #fff;
+  font-size: 1.4rem;
+  cursor: pointer;
+  box-shadow: var(--sombra);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 40;
+  transition: transform 0.15s;
+}
+.botao-carrinho:hover { transform: scale(1.06); }
+
+.contador {
+  position: absolute;
+  top: -4px; right: -4px;
+  background: var(--dourado);
+  color: #3A2233;
+  font-size: 0.7rem;
+  font-weight: 700;
+  min-width: 20px; height: 20px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  padding: 0 4px;
+}
+
+/* ---------- Painel carrinho ---------- */
+.fundo-carrinho {
+  position: fixed; inset: 0;
+  background: rgba(58, 34, 51, 0.4);
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.25s;
+  z-index: 50;
+}
+.fundo-carrinho.visivel { opacity: 1; pointer-events: auto; }
+
+.painel-carrinho {
+  position: fixed; top: 0; right: 0; height: 100%;
+  width: min(380px, 100%);
+  background: var(--creme);
+  box-shadow: -12px 0 30px rgba(0,0,0,0.15);
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 51;
+  display: flex; flex-direction: column;
+}
+.painel-carrinho.aberto { transform: translateX(0); }
+
+.painel-cabecalho {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid rgba(139,58,14,0.1);
+}
+.painel-cabecalho h2 { color: var(--ameixa); font-size: 1.2rem; }
+
+.fechar-painel { border: none; background: none; font-size: 1.1rem; cursor: pointer; color: var(--texto-suave); }
+
+.painel-itens { flex: 1; overflow-y: auto; padding: 12px 20px; }
+
+.linha-item {
+  display: flex; gap: 10px; align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(139,58,14,0.06);
+}
+.linha-item .info { flex: 1; }
+.linha-item .info h4 { margin: 0 0 2px; font-size: 0.9rem; font-weight: 600; color: var(--texto); }
+.linha-item .info span { font-size: 0.8rem; color: var(--texto-suave); }
+
+.controle-quantidade { display: flex; align-items: center; gap: 8px; }
+.controle-quantidade button {
+  width: 26px; height: 26px; border-radius: 50%;
+  border: 1px solid rgba(139,58,14,0.2);
+  background: #fff;
+  cursor: pointer;
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.remover-item { border: none; background: none; color: var(--texto-suave); cursor: pointer; font-size: 0.95rem; margin-left: 4px; }
+
+.carrinho-vazio { text-align: center; color: var(--texto-suave); padding: 40px 10px; font-size: 0.9rem; }
+
+.painel-rodape {
+  padding: 16px 20px 20px;
+  border-top: 1px solid rgba(139,58,14,0.1);
+  display: flex; flex-direction: column; gap: 12px;
+}
+
+.linha-total {
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: 'Fraunces', serif;
+  font-size: 1.1rem;
+  color: var(--ameixa);
+}
+
+#observacoes {
+  resize: none;
+  border: 1px solid rgba(139,58,14,0.15);
+  border-radius: 10px;
+  padding: 10px;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.85rem;
+  background: #fff;
+}
+
+.botao-finalizar {
+  border: none;
+  background: #25D366;
+  color: #fff;
+  padding: 13px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter 0.2s;
+}
+.botao-finalizar:hover { filter: brightness(0.95); }
+.botao-finalizar:disabled { background: #ccc; cursor: not-allowed; }
+
+@media (max-width: 480px) {
+  .marca-texto h1 { font-size: 1.25rem; }
+  .pagina-livro { padding: 18px 14px; min-height: 380px; }
+}
+
+/* ---------- Modal de foto ampliada ---------- */
+.miniatura.clicavel { cursor: zoom-in; }
+
+.modal-imagem {
+  position: fixed;
+  inset: 0;
+  background: rgba(58, 34, 51, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, background 0.25s ease;
+}
+.modal-imagem.aberto {
+  opacity: 1;
+  pointer-events: auto;
+  background: rgba(58, 34, 51, 0.78);
+}
+
+.modal-imagem-caixa {
+  position: relative;
+  background: var(--papel);
+  border-radius: 18px;
+  padding: 10px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.35);
+  transform: scale(0.85);
+  transition: transform 0.25s ease;
+  max-width: min(400px, 90vw);
+}
+.modal-imagem.aberto .modal-imagem-caixa { transform: scale(1); }
+
+.modal-imagem-caixa img {
+  display: block;
+  width: 100%;
+  max-height: 60vh;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.fechar-modal-imagem {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2px solid var(--papel);
+  background: var(--ameixa);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: var(--sombra);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fechar-modal-imagem:hover { background: var(--vinho); }

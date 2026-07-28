@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delícias da Fabi — Cardápio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/cardapio.css">
+</head>
+<body>
+
+  <header class="topo">
+    <div class="marca">
+      <img class="selo" src="js/imagem/logo.png" alt="Logo Delícias da Fabi">
+      <div class="marca-texto">
+        <h1>Delícias da Fabi</h1>
+        <p>Sabor caseiro direto para sua casa 💖</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="conteudo">
+
+    <!-- Sumário: pula direto pra categoria -->
+    <nav class="sumario" id="sumario">
+      <!-- preenchido via JS -->
+    </nav>
+
+    <!-- O "livro" -->
+    <div class="livro">
+      <button class="virar-pagina anterior" id="pagina-anterior" aria-label="Página anterior">‹</button>
+
+      <section class="pagina-livro" id="pagina-livro">
+        <!-- conteúdo da página atual entra aqui via JS -->
+      </section>
+
+      <button class="virar-pagina proxima" id="pagina-proxima" aria-label="Próxima página">›</button>
+    </div>
+
+    <p class="indicador-pagina" id="indicador-pagina"></p>
+
+  </main>
+
+  <!-- Botão flutuante do carrinho -->
+  <button class="botao-carrinho" id="botao-carrinho" aria-label="Abrir carrinho">
+    🛒 <span id="contador-carrinho" class="contador">0</span>
+  </button>
+
+  <!-- Painel lateral do carrinho -->
+  <div class="fundo-carrinho" id="fundo-carrinho"></div>
+  <aside class="painel-carrinho" id="painel-carrinho" aria-hidden="true">
+    <div class="painel-cabecalho">
+      <h2>Seu pedido</h2>
+      <button class="fechar-painel" id="fechar-painel" aria-label="Fechar carrinho">✕</button>
+    </div>
+
+    <div class="painel-itens" id="painel-itens">
+      <!-- itens do carrinho entram aqui via JS -->
+    </div>
+
+    <div class="painel-rodape">
+      <div class="linha-total">
+        <span>Total</span>
+        <strong id="valor-total">R$ 0,00</strong>
+      </div>
+      <textarea id="observacoes" placeholder="Observações do pedido (endereço, forma de pagamento, ponto de referência...)" rows="3"></textarea>
+      <button class="botao-finalizar" id="botao-finalizar">Finalizar pedido no WhatsApp</button>
+    </div>
+  </aside>
+
+  <!-- Modal de foto ampliada -->
+  <div class="modal-imagem" id="modal-imagem">
+    <div class="modal-imagem-caixa">
+      <button class="fechar-modal-imagem" id="fechar-modal-imagem" aria-label="Fechar">✕</button>
+      <img id="modal-imagem-img" src="" alt="">
+    </div>
+  </div>
+
+  <script src="js/cardapio.js"></script>
+</body>
+</html>
