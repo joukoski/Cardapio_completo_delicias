@@ -32,16 +32,16 @@ const CARDAPIO = [
   { id: "brownie-maracuja", nome: "Brownie de Maracujá", descricao: "Cobertura cremosa de maracujá", preco: 20.0, categoria: "Brownies", emoji: "🟡", imagem: "js/imagem/brownie-maracuja.jpg" },
 
   // ---------- Tortas ----------
-  { id: "torta-frango", nome: "Torta de Frango", descricao: "Salgada, individual", preco: 15.0, categoria: "Tortas", emoji: "🥧", imagem: "js/imagem/torta-frango.jpg" },
-  { id: "torta-queijo-presunto", nome: "Torta de Queijo e Presunto", descricao: "Salgada, individual", preco: 15.0, categoria: "Tortas", emoji: "🥧", imagem: "js/imagem/torta-queijo-presunto.jpg" },
+  { id: "torta-frango", nome: "Torta de Frango", descricao: "Salgada", preco: 40.0, categoria: "Tortas", emoji: "🥧", imagem: "js/imagem/torta-frango.jpg" },
+  { id: "torta-queijo-presunto", nome: "Torta de Queijo e Presunto", descricao: "Salgada", preco: 40.0, categoria: "Tortas", emoji: "🥧", imagem: "js/imagem/torta-queijo-presunto.jpg" },
 
   // ---------- Bolos ----------
   { id: "bolo-cenoura-chocolate", nome: "Bolo de Cenoura com Cobertura de Chocolate", descricao: "Bolo inteiro, feito na hora", preco: 60.0, categoria: "Bolos", emoji: "🎂", imagem: "js/imagem/bolo-cenoura-chocolate.jpg" },
   { id: "bolo-chocolate-chocolate", nome: "Bolo de Chocolate com Cobertura de Chocolate", descricao: "Bolo inteiro, feito na hora", preco: 60.0, categoria: "Bolos", emoji: "🎂", imagem: "js/imagem/bolo-chocolate-chocolate.jpg" },
   { id: "bolo-chocolate-ninho", nome: "Bolo de Chocolate com Cobertura de Ninho", descricao: "Bolo inteiro, feito na hora", preco: 60.0, categoria: "Bolos", emoji: "🎂", imagem: "js/imagem/bolo-chocolate-ninho.jpg" },
-  { id: "bolo-laranja", nome: "Bolo de Laranja", descricao: "Bolo inteiro, feito na hora", preco: 40.0, categoria: "Bolos", emoji: "🍊", imagem: "js/imagem/bolo-laranja.jpg" },
-  { id: "bolo-fuba", nome: "Bolo de Fubá", descricao: "Bolo inteiro, feito na hora", preco: 40.0, categoria: "Bolos", emoji: "🌽", imagem: "js/imagem/bolo-fuba.jpg" },
-  { id: "bolo-limao", nome: "Bolo de Limão", descricao: "Bolo inteiro, feito na hora", preco: 50.0, categoria: "Bolos", emoji: "🍋", imagem: "js/imagem/bolo-limao.jpg" },
+  { id: "bolo-fuba-goiabada", nome: "Bolo de Fubá com Cobertura de Goiabada", descricao: "Bolo inteiro, feito na hora", preco: 50.0, categoria: "Bolos", emoji: "🍈", imagem: "js/imagem/bolo-fuba-goiabada.jpg" },
+  { id: "bolo-fuba", nome: "Bolo de Fubá com Erva Doce", descricao: "Bolo inteiro, feito na hora", preco: 40.0, categoria: "Bolos", emoji: "🌽", imagem: "js/imagem/bolo-fuba.jpg" },
+  { id: "bolo-formigueiro", nome: "Bolo Formigueiro", descricao: "Bolo inteiro, feito na hora", preco: 40.0, categoria: "Bolos", emoji: "🐜", imagem: "js/imagem/bolo-formigueiro.jpg" },
 
   // ---------- Pudim ----------
   { id: "pudim-tradicional", nome: "Pudim de Leite", descricao: "Tradicional, caseiro", preco: 60.0, categoria: "Pudim", emoji: "🍮", imagem: "js/imagem/pudim.jpg" },
@@ -57,7 +57,7 @@ const CARDAPIO = [
   { id: "pave-oreo", nome: "Pavê de Oreo", descricao: "Camadas de Oreo e creme", preco: 90.0, categoria: "Especiais", emoji: "🍪", imagem: "js/imagem/pave-oreo.jpg" },
   { id: "bombom-travessa-morango", nome: "Bombom de Travessa de Morango", descricao: "Travessa para compartilhar", preco: 120.0, categoria: "Especiais", emoji: "🍓", imagem: "js/imagem/bombom-travessa-morango.jpg" },
   { id: "bombom-travessa-uva", nome: "Bombom de Travessa de Uva", descricao: "Travessa para compartilhar", preco: 90.0, categoria: "Especiais", emoji: "🍇", imagem: "js/imagem/bombom-travessa-uva.jpg" },
-  { id: "feijao-tropeiro", nome: "Feijão Tropeiro", descricao: "Salgado, porção", preco: 50.0, categoria: "Especiais", emoji: "🍲", imagem: "js/imagem/feijao-tropeiro.jpg" }
+  /*{ id: "feijao-tropeiro", nome: "Feijão Tropeiro", descricao: "Salgado, porção", preco: 50.0, categoria: "Especiais", emoji: "🍲", imagem: "js/imagem/feijao-tropeiro.jpg" }*/
 ];
 
 /* ==========================================================
