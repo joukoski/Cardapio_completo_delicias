@@ -81,6 +81,13 @@ function salvarCarrinho() {
 
 let carrinho = carregarCarrinho();
 
+// Remove do carrinho qualquer item cujo id não existe mais no cardápio
+// (evita erro quando um produto é renomeado ou removido)
+Object.keys(carrinho).forEach(id => {
+  if (!CARDAPIO.find(p => p.id === id)) delete carrinho[id];
+});
+salvarCarrinho();
+
 /* ==========================================================
    MONTAGEM DAS PÁGINAS DO LIVRO
    Uma página por categoria (na ordem em que aparecem pela
